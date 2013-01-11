@@ -28,13 +28,13 @@ begin
   puts raw_data.size.to_s + " bytes returned"
   puts
 
-  if ARGV[1] and ARGV[1].to_i and ARGV[1].to_i < data.count
+  if ARGV[1] and ARGV[1].to_i and ARGV[1].to_i <= data.count
     first_page = ARGV[1].to_i - 1
   else
     first_page = 0
   end
 
-  if ARGV[2] and ARGV[2].to_i and ARGV[2].to_i < data.count and ARGV[2] <= ARGV[1]
+  if ARGV[2] and ARGV[2].to_i and ARGV[2].to_i <= data.count and ARGV[2] >= ARGV[1]
     last_page = ARGV[2].to_i - 1
   else
     last_page = data.count - 1
