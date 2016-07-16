@@ -43,14 +43,19 @@ public class TextEmitter extends PDFTextStripper {
 
 	@Override
 	protected void processTextPosition(TextPosition text) {
-		ArrayList<Object> textInfo = new ArrayList<Object>(5);
+		ArrayList<Object> textInfo = new ArrayList<Object>(9);
 		textInfo.add(text.getX());
 		textInfo.add(text.getY());
 		textInfo.add(text.getCharacter());
 		textInfo.add(text.getFontSizeInPt());
 		textInfo.add(text.getFont().getBaseFont());
+		// these are added to the original five
+		textInfo.add(text.getFontSize());      // multiplier for the "InPt" version
+		textInfo.add(text.getHeight());
+		textInfo.add(text.getWidth());
+		textInfo.add(text.getWidthOfSpace());  // may help with box padding
 		currentPage.add(textInfo);
-	}
+	} // overriding method within pdfbox's PDFTextStripper
 
 	public String getOutput(Format f) {
 		switch (f) {

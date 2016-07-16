@@ -8,7 +8,7 @@
 	<name>pdfboxminer</name>
 	<groupId>org.blackacrelabs</groupId>
 	<artifactId>pdfboxminer</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.5</version>
 	<packaging>jar</packaging>
 
 	<description>Dump tagged PDF text character positions, content, and font information in several interchange formats</description>
